@@ -4,6 +4,7 @@
 # Ambas listas deben estar ordenadas ascendentemente
 
 def division_enteros(numeros):
+    print("Lista de enteros original:", numeros)
     positivos = []
     negativos = []
     for numero in numeros:
@@ -18,4 +19,4 @@ def division_enteros(numeros):
     print("Números positivos:",positivos)
     print("Números negativos:",negativos)
 
-print(division_enteros([3, -1, -5, 2, -2, 4]))
+division_enteros([3, -1, -5, 2, -2, 4])
