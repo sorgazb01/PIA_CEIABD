@@ -22,23 +22,3 @@ conjunto_1 = {1, 2, 3, 4, 5}
 conjunto_2 = {3, 4, 5, 6, 7}
 
 obtener_conjuntos(conjunto_1, conjunto_2)
-
-
-# Solución solicitando los datos de los conjuntos al usuario
-
-conjunto_aux_1 = set()
-conjunto_aux_2 = set()
-
-numeros_conjunto_1 = int(input("Numero de elementos del conjunto 1:"))
-
-for numero in range(numeros_conjunto_1):
-    numero = int(input("Numero " + str(numero+1) +":"))
-    conjunto_aux_1.add(numero)
-    
-numeros_conjunto_2 = int(input("Numero de elementos del conjunto 2:"))
-
-for numero in range(numeros_conjunto_2):
-    numero = int(input("Numero " + str(numero+1) +":"))
-    conjunto_aux_2.add(numero)
-
-obtener_conjuntos(conjunto_aux_1, conjunto_aux_2)
