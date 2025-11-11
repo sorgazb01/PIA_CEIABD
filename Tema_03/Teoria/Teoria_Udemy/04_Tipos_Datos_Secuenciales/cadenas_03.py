@@ -22,3 +22,17 @@ print(cad.startswith('bien'))
 print(cad.startswith('bien',13))
 print(cad.endswith('cion'))
 print(cad.replace('a', 'U'))
+
+cadena = "   www.eugeniabahit.com   "
+print(cadena)
+print(cadena.strip())
+
+cadena = "000000123000000"
+print(cadena.strip("0"))
+
+hora = "12:23:12"
+print(hora.split(":"))
+
+texto = "Linea 1\nLinea 2\nLinea 3"
+print(texto)
+print(texto.splitlines())
