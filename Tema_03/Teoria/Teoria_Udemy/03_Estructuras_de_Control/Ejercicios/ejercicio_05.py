@@ -11,3 +11,8 @@ while contador <= numero:
     resultado = resultado * contador
     contador = contador + 1
 print('El resultado es', resultado)
+
+for resultado in range(contador, numero):
+    resultado = resultado * contador
+print(f"El resultado es: {resultado}")
+    
