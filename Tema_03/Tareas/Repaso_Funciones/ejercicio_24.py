@@ -7,7 +7,7 @@ def mostrarTrianguloPascal(numeroFilas):
         for elemento in range(fila + 1):
             # Para calcular el Triangulo de Pasca se puede hacer con una formula que aplica el factorial,
             # Esta fomula lo que hace es calucular el factorial del nivel del triangulo de pascal en el que
-            # nos encontramos 
+            # nos encontramos, una vez hayamos obtenido ese factorial, c
             # Con el end vamos concatenando cada una de las cadenas
             print(factorial(fila) // (factorial(elemento) * factorial(fila - elemento)), end=' ')
         # Para mostar un salto de linea
