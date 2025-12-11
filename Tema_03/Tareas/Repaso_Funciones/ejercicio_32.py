@@ -2,22 +2,27 @@
 # Escribe una función que devuelva una lista de números primos hasta un número
 # dado utilizando el método de la Criba de Eratóstenes.
 
-def generarPrimosHastaLimite(limite):
-    primos = []
-    esPrimo = [True] * (limite + 1)
-    esPrimo[0] = esPrimo[1] = False
-
-    for numero in range(2, limite + 1):
-        if esPrimo[numero]:
-            primos.append(numero)
-            for multiplo in range(numero * numero, limite + 1, numero):
-                esPrimo[multiplo] = False
-
-    return primos
-
-
-limite = int(input('Introduce un numero limite para generar la lista de numeros primos: '))
-listaPrimos = generarPrimosHastaLimite(limite)
-print(f'La lista de numeros primos hasta {limite} es: ')
-for primo in listaPrimos:
-    print(primo)
+def primosLimite(limite):
+    # Primero comprobamos que el limite que pasa el usuario es menor que 2
+    # no hay primos menores de 2
+    if limite < 2:
+        return []
+    # En el caso de que el limite sea 2, es el unico numero primo dentro del limite
+    if limite == 2:
+        return [2]
+    # Si no se cumple lo anterior
+    # Primero calculamos el indice máximo que habrá de numeros primos
+    # que es la mitad entera del limite - 1
+    indiceMaximo = (limite - 1) // 2
+    
+    # Creamo un array booleano cuya longitud es el indice máximo,
+    # lo creamos por defecto a true
+    esPrimo = [True] * (indiceMaximo + 1)
+    
+    
+    for i in range(int(pow(limite, 0.5) // 2)):
+        if esPrimo[i]:
+            numero = i * 2 + 3
+            esPrimo[i + numero::numero] = [False] * ((indiceMaximo - (i + numero)) // numero + 1)
+            
+    return [2] + [i * 2 + 3 for i in range(indiceMaximo + 1) if esPrimo[i]]
