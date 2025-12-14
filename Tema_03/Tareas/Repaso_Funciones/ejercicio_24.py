@@ -3,14 +3,18 @@
 from math import factorial
 
 def mostrarTrianguloPascal(numeroFilas):
+    # Recorremos cada una de las filas del triangulo de pascal
+    # que queremos generar
     for fila in range(numeroFilas):
+        # Recorremos cada uno de los elementos de la fila
+        # cada fila tiene tantos elementos como su numero de fila + 1
         for elemento in range(fila + 1):
-            # Para calcular el Triangulo de Pasca se puede hacer con una formula que aplica el factorial,
-            # Esta fomula lo que hace es calucular el factorial del nivel del triangulo de pascal en el que
-            # nos encontramos, una vez hayamos obtenido ese factorial, c
-            # Con el end vamos concatenando cada una de las cadenas
+            # Para calcular el valor de cada elemento de la fila usamos la formula:
+            # C(fila, elemento) = fila! / (elemento! * (fila - elemento)!)
+            # con end= ' ' hacemos que no se genere un salto de linea
             print(factorial(fila) // (factorial(elemento) * factorial(fila - elemento)), end=' ')
-        # Para mostar un salto de linea
+        # Para mostar un salto de linea cuando hayamos mostrados todos los
+        # elementos de la fila
         print()
 
 numeroFilas = int(input('Introduce el numero de filas del Triangulo de Pascal: '))

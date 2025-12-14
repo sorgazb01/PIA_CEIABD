@@ -1,28 +1,40 @@
 # 32. Generar una lista de números primos hasta N.
 # Escribe una función que devuelva una lista de números primos hasta un número
 # dado utilizando el método de la Criba de Eratóstenes.
+from math import sqrt
 
+# El metodo de la Criba de Eratostenes consiste en ir descartando todos los multiplos
+# de cada numero para obtener asi la lista de los numeros primos
 def primosLimite(limite):
-    # Primero comprobamos que el limite que pasa el usuario es menor que 2
-    # no hay primos menores de 2
+    # Primero comprobamos que si el usuario nos ha pasado un limite menor de 2,
+    # le devolvemos una lista vacia, no hay numeros primos menores de 2
     if limite < 2:
         return []
-    # En el caso de que el limite sea 2, es el unico numero primo dentro del limite
-    if limite == 2:
-        return [2]
-    # Si no se cumple lo anterior
-    # Primero calculamos el indice máximo que habrá de numeros primos
-    # que es la mitad entera del limite - 1
-    indiceMaximo = (limite - 1) // 2
     
-    # Creamo un array booleano cuya longitud es el indice máximo,
-    # lo creamos por defecto a true
-    esPrimo = [True] * (indiceMaximo + 1)
+    # Creamos una lista booleana con todos los elementos a True
+    # con la longitud hasta el limite incluido
+    esPrimo = [True] * (limite + 1)
     
+    # Asumimos que 0 y 1 no son primos
+    esPrimo[0] = False
+    esPrimo[1] = False
     
-    for i in range(int(pow(limite, 0.5) // 2)):
-        if esPrimo[i]:
-            numero = i * 2 + 3
-            esPrimo[i + numero::numero] = [False] * ((indiceMaximo - (i + numero)) // numero + 1)
-            
-    return [2] + [i * 2 + 3 for i in range(indiceMaximo + 1) if esPrimo[i]]
+    # Recorremos desde 2 primer numero primo hasta la raiz cuadrade del limite,
+    # porque los multiplos de numeros mayores ya estan marcados
+    for numero in range(2, int(sqrt(limite)) + 1):
+        # Si el número actual es primo
+        if esPrimo[numero]:
+            # Marcamos todos sus multiplos como no primos con el siguiente bucle
+            for multiplo in range(numero * numero, limite + 1, numero):
+                esPrimo[multiplo] = False
+
+    # Devolvemos una lista con todos los números que sean primos
+    primos = []
+    for numero in range(limite + 1):
+        if esPrimo[numero]:
+            primos.append(numero)
+    return primos
+
+limite = int(input('Introduce un rango hasta el que obtener todos los numero primos: '))
+primos = primosLimite(limite)
+print(f'Numeros primos {primos}')
