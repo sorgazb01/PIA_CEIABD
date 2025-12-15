@@ -1,11 +1,13 @@
 class Coche:
 
+    # Creamos el contructor de la clase juntos con sus atributos
     def __init__(self, marca, modelo, anio, color):
         self.marca = marca
         self.modelo = modelo
         self.anio = anio
         self.color = color
     
+    # Creamos los metodos para dar valor y modificar un atributo
     @property
     def marca(self):
         return self._marca
@@ -38,5 +40,6 @@ class Coche:
     def color(self, color):
         self._color = color
 
+    # Metodo de la clase
     def mostrar(self):
         return f'Marca: {self.marca}, Modelo: {self.modelo}, Año: {self.anio}, Color: {self.color}'

@@ -3,5 +3,8 @@
 # muestra sus atributos.
 import coche
 
+# Creamos un objeto de la clase coche y lo inicializamos
 coche = coche.Coche("Toyota", "Corolla", 2020, "Rojo")
+
+# Llamamos al metodo mostrar de la clase coche
 print(coche.mostrar())

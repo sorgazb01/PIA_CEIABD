@@ -1,9 +1,11 @@
 class Perro:
-
+    
+    # Creamos el constructor de la clase con sus atributos
     def __init__(self, nombre, edad):
         self.nombre = nombre
         self.edad = edad
     
+    # Creamos los metodos para dar valor y modificar un atributo
     @property
     def nombre(self):
         return self._nombre
@@ -20,5 +22,6 @@ class Perro:
     def edad(self, edad):
         self._edad = edad
     
+    # Metodo de la clase
     def saludar(self):
         return 'Hola, soy un perro y me llamo ' + self.nombre
