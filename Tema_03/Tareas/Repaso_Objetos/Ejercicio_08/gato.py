@@ -5,4 +5,4 @@ class Gato(Animal):
         super().__init__(nombre)
         
     def hacer_sonido(self):
-        print('Miau')
+        print('Hola soy un Gato, miau')
