@@ -1,5 +1,5 @@
 class Animal:
-    def __inti__(self, nombre):
+    def __init__(self, nombre):
         self.nombre = nombre
         
     @property

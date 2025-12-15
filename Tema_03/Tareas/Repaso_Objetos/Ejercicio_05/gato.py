@@ -5,4 +5,4 @@ class Gato(Animal):
         super().__init__(nombre)
         
     def maullar(self):
-        print('Miau')
+        return 'Miau'
