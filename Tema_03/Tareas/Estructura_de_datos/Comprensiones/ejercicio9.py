@@ -25,3 +25,8 @@ print(alumnosCondiciones(alumnos))
 
 
 # b) Con comprensiones
+def alumnosCondicionesComprension(alumnos):
+    return [{nombre: round(sum(notas)/len(notas), 1)} for alumno in alumnos for nombre, notas in alumno.items() if len(nombre) >= 4 and (sum(notas)/len(notas)) > 6]
+
+print('Alumnos que cumplen las condiciones con comprension: ')
+print(alumnosCondicionesComprension(alumnos))
