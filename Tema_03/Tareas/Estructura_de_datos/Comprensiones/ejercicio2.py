@@ -5,22 +5,36 @@
 # a) Resuelve el problema sin comprensiones.
 # b) Soluciona el ejercicio usando comprensión.
 
-#a)
+# Ejemplo frase de prueba
 frase = 'En un lugar de La Mancha de cuyo nombre no quiero acordarme'
 
+#a) Sin Compresiones
+
+# Metodo para convertir la frase
 def convertirFrase(frase):
+    # Nueva variable que contendra la frase transformada
     nuevaFrase = ''
+    # Recorremos la frase orignal palabra a palabra
     for palabra in frase.split():
-        if 'a' in palabra or 'A' in palabra:
+        # Si la palabra contiene una A
+        if 'a' in palabra.lower():
+            # La ponemos en la nueva frase en mayusculas
             nuevaFrase += palabra.upper() + ' '
         else:
+            # En caso contrario la ponemos en forma de titulo
             nuevaFrase += palabra.capitalize() + ' '
-    return nuevaFrase.strip()
+    # Devolvemos la nueva frase
+    return nuevaFrase
 
+print('Frase sin comprensiones: ')
 print(convertirFrase(frase))
 
 #b)
+
+# Metodo para convertir la frase con comprensiones
 def convertirFraseCompresion(frase):
+    # Creamos la compresion con la condicion al principio y devolvemos la frase unida
     return ' '.join([palabra.upper() if 'a' in palabra.lower() else palabra.capitalize() for palabra in frase.split()])
 
+print('Frase con comprensiones: ')
 print(convertirFraseCompresion(frase))
