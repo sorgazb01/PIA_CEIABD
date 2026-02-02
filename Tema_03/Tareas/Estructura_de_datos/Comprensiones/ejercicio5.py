@@ -18,15 +18,22 @@
 # (11, 7, 3), (11, 7, 5), (11, 7, 7), (11, 7, 11), (11, 11, 3), 
 # (11, 11, 5), (11, 11, 7), (11, 11, 11)]
 
-#a) Con compresion
+# Ejemplo de tupla de prueba
 tupla = (3, 5, 7, 11)
 
+#a) Con compresion
+
+# Metod para generar la lista de tuplas usando una comprension 
+# con bucles anidados
 def generarTuplasCompresion(tupla):
     return [(a, b, c) for a in tupla for b in tupla for c in tupla]
+
 print('Tuplas con compresion: ')
 print(generarTuplasCompresion(tupla))
 
 #b) Sin compresion
+
+# Metodo para generar la lista de tuplas sin usar una comprension
 def generarTuplas(tupla):
     listaTuplas = []
     for a in tupla:
