@@ -43,9 +43,13 @@ print(mostrarNumerosGlotones())
 
 #b) Con compresion
 
+# Metodo para obtener los numeros glotones del 1 al 100 con comprension
 def generarNumerosGlotonesComprension():
     mostrarNumeros1a100()
     print('Lista numeros glotones: ')
+    # Creamos la comprension que genera la lista de numeros glotones, creando cada una de las condiciones, primero 
+    # comprobamos si es multiplo de 3 y de 5, despues si no cumple la condicion anterior pasamos a comprobar si es 
+    # multiplo de 3, y si no lo es comprobamos que lo sea de 5 y si tampoco cumple esa condicion añadimos el numero tal cual.
     return ['ÑAM_ÑAM_A_COMER' if i % 3 == 0 and i % 5 == 0 else 'ÑAM' if i % 3 == 0 else 'A_COMER' if i % 5 == 0 else i for i in range(1, 101)]
 
 print('Lista numeros glotones con comprension: ')
