@@ -1,0 +1,7 @@
+barca : ['braca', 'cabra', 'cabrá', 'carba']
+cordón : ['cóndor']
+usadme : ['medusa', 'mudase']
+pasiva : ['avispa', 'avispá', 'pasivá']
+comas : ['masco', 'mascó', 'mocas', 'mocás', 'mosca', 'moscá']
+trapean : ['aparten', 'atrapen', 'entrapa', 'entrapá', 'pantera', 'parante', 'partean', 'paterna', 'pañetar', 'petaran', 'petarán', 'rapante', 'taparen', 'trepana', 'trepaná']
+grite : ['grité', 'tigre']
